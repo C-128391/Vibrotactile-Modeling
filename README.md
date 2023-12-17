@@ -1,7 +1,7 @@
 # Vibrotactile-Modeling
 
 This project includes scripts for data preparation, model training, testing, and folders for generated results.
-！[](https://github.com/C-128391/Vibrotactile-Modeling/blob/main/Vibrotactile.png)
+！(https://github.com/C-128391/Vibrotactile-Modeling/blob/main/Vibrotactile.png)
 
 ## Data Preparation Phase
 
