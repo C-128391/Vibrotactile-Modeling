@@ -7,7 +7,6 @@ This project includes scripts for data preparation, model training, testing, and
 ### Downsampling Data
 
 Start by running `prepair.py` to downsample the original dataset.
-
 ```bash
 python prepair.py
 
