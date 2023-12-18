@@ -43,7 +43,12 @@ Use `stu-model.py` to train the student model, obtaining a complete Loss curve a
 ```bash
 python stu-model.py
 ```
-View the Loss curve during training in the "t-SNE results" folder.
+View the Loss curve below.
+
+### Get t-SNE image
+Use `vision.py` to get t-SNE images
+View the original results in the "t-SNE results" folder.
+
 
 ## Real Texture Modeling
 Before using the model for real texture modeling, run `image-adjust.py` to adjust the format of images corresponding to real textures, ensuring consistency with the HaTT database's image format.
