@@ -1,4 +1,4 @@
-# Vibrotactile-Modeling
+# Research on Low-delay Haptic Texture Display Method Based on Action Information and Texture Image
 
 This project includes scripts for data preparation, model training, testing, and folders for generated results.
 
