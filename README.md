@@ -47,6 +47,9 @@ View the Loss curve below.
 
 ### Get t-SNE image
 Use `vision.py` to get t-SNE images
+```bash
+python vision.py
+```
 View the original results in the "t-SNE results" folder.
 
 
