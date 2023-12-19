@@ -44,7 +44,7 @@ Use `stu-model.py` to train the student model, obtaining a complete Loss curve a
 ```bash
 python stu-model.py
 ```
-View the Loss curve with “Loss。png”.
+View the Loss curve with “Loss.png”.
 ### Get t-SNE image
 Use `vision.py` to get t-SNE images
 ```bash
