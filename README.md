@@ -14,7 +14,7 @@ In this work, our objective is to establish a multimodal fusion model for predic
 ## <p align="center">DETAILS OF IMPLEMENT</p>
 This project includes scripts for data preparation, model training, testing, and folders for generated results.
 ### Dataset
-
+We use the HaTT database as a testing and validation library for the tactile texture modeling framework. The HaTT library contains 100 different texture images in 10 categories, as well as data such as normal force, velocity and vibration acceleration recorded by the experimenter's handheld tool moving on each textured surface in a natural way for 10 seconds. For more details, see https://ieeexplore.ieee.org/abstract/document/6775475
 ### Data Preparation
 Start by running `prepair.py` to downsample the original dataset.
 ```bash
