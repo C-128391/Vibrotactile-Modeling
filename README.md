@@ -1,6 +1,6 @@
 #  <p align="center">Research on Low-delay Haptic Texture Display Method Based on Action Information and Texture Image</p>
 
- <p align="center">Dapeng Chen, Geng Chen, Qiangqiang Ouyang, Xuhui Hu, Yingping Fang, Yunjie Zhang, Jia Liu, and Aiguo Song</p>
+ <p align="center">Dapeng Chen, Geng Chen, Yi Ding, Qiangqiang Ouyang, Xuhui Hu, Jia Liu, and Aiguo Song</p>
   <p align="center">Nanjing University of Information Science & Technology</p>
 
 ## <p align="center">ABSTRACT</p>
