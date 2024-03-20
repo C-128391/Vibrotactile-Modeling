@@ -9,7 +9,7 @@ In recent years, tool-mediated vibrotactile display of virtual surface texture h
 ## <p align="center">THE HAPTIC TEXTURE MODELING FRAMEWORK</p>
 In this work, our objective is to establish a multimodal fusion model for predicting tactile signals. This model employs multimodal information (visual images ${x}$, scanning velocity ${v}$, and normal force ${f}$) as inputs to predict the corresponding vibrotactile signals ${a}$. This can be simplified as ${a=g(x, v, f)}$ with ${g}$ representing the prediction model. Inspired by existing works, we designed a haptic texture modeling framework based on action information, the overall structure of the framework is shown below.
 
-![image]([https://github.com/C-128391/Vibrotactile-Modeling/blob/main/The structure of haptic texture rendering model.png](https://github.com/C-128391/Vibrotactile-Modeling/blob/main/The%20structure%20of%20haptic%20texture%20rendering%20model.png))
+![image](https://github.com/C-128391/Vibrotactile-Modeling/blob/main/The%20structure%20of%20haptic%20texture%20rendering%20model.png)
 
 ## <p align="center">DETAILS OF IMPLEMENT</p>
 This project includes scripts for data preparation, model training, testing, and folders for generated results.
