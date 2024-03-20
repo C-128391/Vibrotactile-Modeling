@@ -3,6 +3,8 @@ import os
 import pandas as pd
 import numpy as np
 
+#  Convert XML file to Excel file，downsample and normalize the original data.
+
 class MyContentHandler(xml.sax.ContentHandler):
     def __init__(self):
         self.values = []
@@ -24,8 +26,6 @@ class MyContentHandler(xml.sax.ContentHandler):
         if name == "value":
             self.in_value = False
 
-# xml_file = r"E:\pycharm projeces\vibrotactile display\original data\Accel\Accel_ABS Plastic.xml"
-
 def remove_outliers_std(data, threshold=3):
     mean = np.mean(data)
     std = np.std(data)
@@ -39,11 +39,11 @@ def normalize_list_linear(lst):
     normalized_lst = [x / (max_val - min_val) for x in lst]
     return normalized_lst
 
-folder_path = r'file/to/path'
+folder_path = r'original data/Speed' #The folder containing the original velocity information of the dataset (.xml files).
 file_names = os.listdir(folder_path)
 
 for i in file_names:
-    xml_file = r"file/to/path" %i
+    xml_file = r"original data/Speed/%s" %i
     parser = xml.sax.make_parser()
     handler = MyContentHandler()
     parser.setContentHandler(handler)
@@ -55,7 +55,7 @@ for i in file_names:
 
     name = i.rsplit('.', 1)[0]
     name = name + '.xlsx'
-    excel_file = r"file/to/path"%name
+    excel_file = r"original data/data_deal_test/original_force/%s"%name #The folder for storing preprocessed information.
 
     df = pd.DataFrame({'File Name': speed_values})
 

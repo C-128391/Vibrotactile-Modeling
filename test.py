@@ -7,11 +7,13 @@ import pandas as pd
 from math import sqrt
 import openpyxl
 
+#Validate the results on the test set.
+
 workbook = openpyxl.Workbook()
 sheet = workbook.active
 
 model2 = Generator().cuda()
-model2.load_state_dict(torch.load('file/to/path'))
+model2.load_state_dict(torch.load('model/best_model.pt')) #The path corresponding to the trained model.
 model2.eval()
 
 def read_csv(path):
@@ -33,27 +35,25 @@ def calculate_rmse(actual, predicted):
 
 def pix2pix(i):
     csv_name = file_names[i]
-    csv_name = os.path.splitext(csv_name)[0] + '.xlsx'
+    csv_name = os.path.splitext(csv_name)[0] + '.xlsx'  # Get file name (without extension)
     end_index = csv_name.index('-')
     content = csv_name[:end_index]
     image_name = content + '_square.png'
     return csv_name, image_name
 
-csv_path = "file/to/path"
+
+csv_path = "test/B"
 
 file_names = get_file_names(csv_path)
 print(len(file_names))
 
 generate = []
 real = []
-original = read_csv(r'file/to/path')
 
-for i in range(463):
+for i in range(100):
     csv_name = file_names[i+463*9]
     c_path = os.path.join(csv_path, csv_name)
-
     csv = torch.tensor(read_csv(c_path)).unsqueeze(0).to(device)
-
     x_t, x_pred_t = model2(csv)
     x_t = x_t.flatten().tolist()
     x_pred_t = x_pred_t.flatten().tolist()
@@ -64,10 +64,7 @@ time_signal1 = real
 time_signal2 = generate
 plt.plot(time_signal1)
 plt.plot(time_signal2)
-plt.savefig('file/to/path')
 plt.show()
-
-
 
 
 

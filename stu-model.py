@@ -7,6 +7,8 @@ from torch.utils.data import Dataset
 from encoder import *
 import openpyxl
 
+#Used for training student models and saving the trained models.
+
 workbook = openpyxl.Workbook()
 sheet = workbook.active
 
@@ -16,7 +18,7 @@ def make_model():
     return model
 
 generate = Generator().cuda()
-generate.load_state_dict(torch.load('file/to/path'))
+generate.load_state_dict(torch.load('model/best_model.pt')) #The path corresponding to the trained model.
 generate.eval()
 
 
@@ -103,7 +105,7 @@ class FeatureExtractionDataset(Dataset):
 
         return img,0
 
-data_dir = r'file/to/path'
+data_dir = r'E:\pycharm projeces\vibrotactile display\image-png' #The folder path where texture images are stored.
 
 
 transform = transforms.Compose([
@@ -116,8 +118,9 @@ dataset = FeatureExtractionDataset(data_dir, transform)
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=64, shuffle=True)
 optimizer = optim.Adam(student_model.parameters(), lr=0.001)
 
-num_epochs = 3000
+num_epochs = 26000
 train_loss_list = []
+min_val = 0.3
 for epoch in range(num_epochs):
     trn = []
     for inputs, _ in dataloader:
@@ -133,13 +136,14 @@ for epoch in range(num_epochs):
 
     train_loss = (sum(trn) / len(dataloader))
     train_loss_list.append(train_loss)
-
     print(f'Epoch {epoch+1}/{num_epochs}, Loss: {train_loss}')
-    torch.save(student_model.state_dict(), 'stu_model.pt')
+    if train_loss < min_val:
+       min_val = train_loss
+       torch.save(student_model.state_dict(), 'stu_model.pt')
 
 for j in range(len(train_loss_list)):
     sheet.cell(row=j + 1, column=1, value=train_loss_list[j])
-workbook.save(r"知识蒸馏_loss.xlsx")
+workbook.save(r"loss.xlsx")
 
 plt.plot(train_loss_list)
 plt.show()
