@@ -13,7 +13,7 @@ def main():
     Net = Generator()
     ResNet = make_model()
 
-    device = torch.device("cuda:0")  # 指定要使用的 CUDA 设备
+    device = torch.device("cuda:0")  # #Specify the CUDA device to be used
     Net.to(device)
 
     ResNet.to(device)
@@ -62,12 +62,11 @@ def main():
         if val_loss < min_val:
             print('saving model')
             min_val = val_loss
-            torch.save(Net.state_dict(), 'model1/model%s.pt'%epoch) #保存的模型对应的路径
+            torch.save(Net.state_dict(), 'model1/model%s.pt'%epoch) #The path corresponding to the saved model
 
         if (epoch+1) % 100 == 0:
             print('saving model')
-            torch.save(Net.state_dict(), 'model1/model%s.pt' % epoch) #保存的模型对应的路径
-
+            torch.save(Net.state_dict(), 'model1/model%s.pt' % epoch) #The path corresponding to the saved model
     for j in range(len(train_loss_list)):
         sheet.cell(row=j + 1, column=1, value=train_loss_list[j])
     workbook.save(r"model1/train_loss.xlsx")
