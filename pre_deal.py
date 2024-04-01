@@ -42,7 +42,7 @@ for i in range(10):
     df1 = pd.read_excel(r'original data/data_deal_test/original_speed\%s'%file_names1[i+90])
     df2 = pd.read_excel(r'original data/data_deal_test/original_force\%s'%file_names2[i+90])
     df3 = pd.read_excel(r'original data/data_deal_test/original_acc\%s'%file_names3[i+90])
-    image = transforms.ToTensor()(rgb_to_gray(Image.open(images[i+10]))).unsqueeze(0)
+    image = transforms.ToTensor()(rgb_to_gray(Image.open(images[i+90]))).unsqueeze(0)
 
     column_values1 = df1.iloc[:, 0].tolist()[:39000]
     column_values2 = df2.iloc[:, 0].tolist()[:39000]
