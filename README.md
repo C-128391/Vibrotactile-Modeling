@@ -58,11 +58,6 @@ Before using the model for real texture modeling, run `image-adjust.py` to adjus
 ```bash
 python image-adjust.py
 ```
-Then, run `time-frequency transform.py` to test the model.
-
-```bash
-python time-frequency transform.py
-```
 
 ## Result Comparison
 Compare t-SNE images obtained using the student model and the teacher model. View the original images in the "t-SNE results" folder.
