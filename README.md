@@ -1,6 +1,6 @@
 #  <p align="center">Low-delay Haptic Texture Display Method Based on User Action Information and Texture Image</p>
 
- <p align="center">Dapeng Chen, Geng Chen, Yi Ding, Tianyu Fan, Jia Liu, and Aiguo Song</p>
+ <p align="center">Dapeng Chen, Yi Ding, Geng Chen, Tianyu Fan, Jia Liu, and Aiguo Song</p>
   <p align="center">Nanjing University of Information Science & Technology</p>
 
 ## <p align="center">ABSTRACT</p>
